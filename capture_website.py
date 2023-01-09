@@ -5,7 +5,7 @@ import requests
 from PIL import Image
 import imagehash
 
-print(sys.argv[-1])
+#print(sys.argv[-1])
 format = "png"
 url = f"https://www.web2pdfconvert.com/api/convert/web/to/{format}?storefile=true&filename=someurl-com"
 headers = {
@@ -30,8 +30,8 @@ form = {
     "ImageWidth": (None, 1360),
 }
 response = requests.post(url, files=form, headers=headers)
-print(response.status_code)
-print(response.text)
+#print(response.status_code)
+#print(response.text)
 data = response.json()
 image_url = data["Files"][0]["Url"]
 r = requests.get(image_url, timeout=300, stream=True)
