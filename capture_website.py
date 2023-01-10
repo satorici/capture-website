@@ -48,4 +48,5 @@ buffered = BytesIO()
 image_data.save(buffered, format="PNG")
 img_str = base64.b64encode(buffered.getvalue())
 
-print(len(base64.b64encode(img_str)))
+#print(len(base64.b64encode(img_str)))
+print(base64.b64encode(img_str))
