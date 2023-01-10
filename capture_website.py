@@ -4,6 +4,7 @@ import sys
 import requests
 from PIL import Image
 import imagehash
+import base64
 
 #print(sys.argv[-1])
 format = "png"
@@ -39,5 +40,7 @@ with open(f"image.{format}", "wb") as fh:
     for chunk in r.iter_content(1024 * 1024):
         fh.write(chunk)
 image_data = Image.open(f"image.{format}")
-hash_i = imagehash.average_hash(image_data, hash_size=12)
-print(hash_i)
+
+#hash_i = imagehash.average_hash(image_data, hash_size=12)
+#print(hash_i)
+print(len(base64.b64encode(image_data)))
