@@ -5,6 +5,7 @@ import requests
 from PIL import Image
 import imagehash
 import base64
+from io import BytesIO
 
 #print(sys.argv[-1])
 format = "png"
