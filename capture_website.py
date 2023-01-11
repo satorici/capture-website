@@ -42,11 +42,11 @@ with open(f"image.{format}", "wb") as fh:
         fh.write(chunk)
 image_data = Image.open(f"image.{format}")
 
-#hash_i = imagehash.average_hash(image_data, hash_size=12)
-#print(hash_i)
-buffered = BytesIO()
-image_data.save(buffered, format="PNG")
-img_str = base64.b64encode(buffered.getvalue())
+hash_i = imagehash.average_hash(image_data, hash_size=12)
+print(hash_i)
+#buffered = BytesIO()
+#image_data.save(buffered, format="PNG")
+#img_str = base64.b64encode(buffered.getvalue())
 
 #print(len(base64.b64encode(img_str)))
-print(base64.b64encode(img_str))
+#print(base64.b64encode(img_str))
